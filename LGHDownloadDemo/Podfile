@@ -5,8 +5,7 @@ target 'DownLoad' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-#  pod 'LGHMakeViewTools','~>0.0.1'
-
+   pod 'LGHMakeViewTools','~>0.0.1'
    pod 'Masonry'
    pod 'SVProgressHUD'
 

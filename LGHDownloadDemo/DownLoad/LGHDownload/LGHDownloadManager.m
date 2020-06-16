@@ -101,6 +101,11 @@ static LGHDownloadManager * _instance = nil;
 }
 
 -(LGHDownloadTaskState)download:(NSString *)url progress:(LGHDownloadingBlock)progressBlock state:(LGHDownloadStateBlock)stateBlock{
+    //添加程序杀死监听
+    if (!self.isAddNotification) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:UIApplicationWillTerminateNotification object:nil];
+        self.isAddNotification = YES;
+    }
     // URL检查是否可以下载
     if ([self checkCanDownload:url]!= LGHDownloadTaskStateCanDownload) {
         return [self checkCanDownload:url];
@@ -137,6 +142,12 @@ static LGHDownloadManager * _instance = nil;
  @param url 任务的下载地址
  */
 - (void)resumeDownload:(NSString *)url{
+    //添加程序杀死监听
+    if (!self.isAddNotification) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:UIApplicationWillTerminateNotification object:nil];
+        self.isAddNotification = YES;
+    }
+    
     LGHSession *session = [self getDownloadSessionWithUrlString:url];
     if (!session) {
         return;
@@ -323,7 +334,19 @@ static LGHDownloadManager * _instance = nil;
     return downArr;
 }
 
+
++ (void)handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler{
+    [LGHDownloadManager sharedInstance].backgroundCompletionHandler = completionHandler;
+}
+
 #pragma mark - NSURLSessionDataDelegate
+
+-(void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session{
+    if (self.backgroundCompletionHandler) {
+        self.backgroundCompletionHandler();
+    }
+}
+
 -(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSHTTPURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler{
     LGHSession *asSession = [self getDownloadSessionWithUrlString:[self getUrlStringWithTaskResponse:dataTask]];
     asSession.startTime = [NSDate date];
@@ -351,8 +374,9 @@ static LGHDownloadManager * _instance = nil;
     //下载进度
     NSUInteger receivedSize = LGHDownloadLength(asSession.url);
     NSUInteger expectedSize = asSession.totalLength;
-    CGFloat progress = 1.0*(receivedSize/expectedSize);
+    CGFloat progress = (receivedSize/(CGFloat)expectedSize)*1.0;
     asSession.progress = progress;
+    NSLog(@"%lf",progress);
     //已写入大小
     float totalBytesWrittenSize = [self calculateFileSizeInUnit:(unsigned long long)receivedSize];
     NSString *totalBytesWrittenUnit = [self calculateUnit:(unsigned long long)receivedSize];
@@ -399,9 +423,7 @@ static LGHDownloadManager * _instance = nil;
     [asSession.stream close];
     asSession.stream = nil;
     if (error) {
-        if (asSession.downloadState == LGHDownloadStateLoading||asSession.downloadState== LGHDownloadStatePause) {
-            return;
-        }
+        if (asSession.downloadState == LGHDownloadStateWaiting || asSession.downloadState == LGHDownloadStatePause) return;
         asSession.downloadState = LGHDownloadStateFailed;
         [self saveSessions];
         //正在处理任务中移除 (有错误)
@@ -577,7 +599,7 @@ static LGHDownloadManager * _instance = nil;
  */
 - (NSArray *)resumeURLSession:(NSString *)url {
     // session配置
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:url];
     // 得到session对象
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
     // 创建流
@@ -637,6 +659,13 @@ static LGHDownloadManager * _instance = nil;
     NSString *regex = @"\\bhttps?://[a-zA-Z0-9\\-.]+(?::(\\d+))?(?:(?:/[a-zA-Z0-9\\-._?,'+\\&%$=~*!():@\\\\]*)+)?";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     return [predicate evaluateWithObject:string];
+}
+
+
+#pragma mark - dealloc
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 

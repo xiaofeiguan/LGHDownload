@@ -126,9 +126,27 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
-    
+    if (indexPath.section==1) {
+        LGHSession *session = self.manager.getDownloadingArr[indexPath.row];
+        switch (session.downloadState) {
+            case LGHDownloadStatePause:
+                [self.manager resumeDownload:session.url];
+                break;
+            case LGHDownloadStateLoading:
+                [self.manager pauseDownloadTaskWithUrl:session.url];
+                break;
+            case LGHDownloadStateFailed:
+                [self.manager resumeDownload:session.url];
+                break;
+            case LGHDownloadStateWaiting:
+                [self.manager resumeDownload:session.url];
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

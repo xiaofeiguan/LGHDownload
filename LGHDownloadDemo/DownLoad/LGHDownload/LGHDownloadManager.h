@@ -119,6 +119,11 @@ typedef NS_ENUM(NSInteger, LGHDownloadTaskState) {
  @return 数组
  */
 - (NSArray *)getDownloadingArr;
+
++ (void)handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler;
+
+/** 后台下载的回调 */
+@property (nonatomic, copy) void(^backgroundCompletionHandler)(void);
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1,0 +1,6 @@
+framework module LGHMakeViewTools {
+  umbrella header "LGHMakeViewTools-umbrella.h"
+
+  export *
+  module * { export * }
+}

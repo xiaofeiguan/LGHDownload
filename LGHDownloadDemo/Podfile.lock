@@ -1,20 +1,24 @@
 PODS:
+  - LGHMakeViewTools (0.0.1)
   - Masonry (1.1.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - LGHMakeViewTools (~> 0.0.1)
   - Masonry
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
+    - LGHMakeViewTools
     - Masonry
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  LGHMakeViewTools: 53b27d1ef8c2ace72af8eb9057310af5d32f9212
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 849fdd88e22738a8de348628b6a1bf4a62c97d85
+PODFILE CHECKSUM: 7458031517efd6f5886b81a48475b0eb22ada96a
 
 COCOAPODS: 1.9.1

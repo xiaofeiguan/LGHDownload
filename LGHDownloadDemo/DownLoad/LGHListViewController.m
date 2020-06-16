@@ -11,6 +11,7 @@
 #import "Masonry.h"
 #import "LGHDownloadManager.h"
 #import "SVProgressHUD.h"
+#import "LGHViewMakerHeader.h"
 
 @interface LGHListViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, copy) NSMutableArray * videoUrls;
@@ -33,10 +34,13 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"下载页" style:UIBarButtonItemStylePlain target:self action:@selector(intoDownloadVC)];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.mainTableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    self.mainTableView.delegate = self;
-    self.mainTableView.dataSource = self;
-    [self.view addSubview:self.mainTableView];
+    
+    self.mainTableView = [UITableView LGH_make:^(LGHTableViewMaker *make) {
+        make.addTo(self.view)
+        .frame(self.view.bounds)
+        .dataSource(self)
+        .delegate(self);
+    } style:UITableViewStylePlain];
     [self.mainTableView reloadData];
     
 }

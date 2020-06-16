@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LGHListViewController.h"
+#import "LGHDownloadManager.h"
 @interface AppDelegate ()
 
 @end
@@ -27,6 +28,12 @@
     return YES;
 }
 
+
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(nonnull void (^)(void))completionHandler
+{
+    
+    [LGHDownloadManager handleEventsForBackgroundURLSession:identifier completionHandler:completionHandler];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

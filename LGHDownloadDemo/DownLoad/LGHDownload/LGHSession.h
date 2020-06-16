@@ -77,6 +77,9 @@ typedef void(^LGHDownloadStateBlock)(LGHDownloadState state);
 
 /** 下载状态 */
 @property (atomic, copy) LGHDownloadStateBlock stateBlock;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END
