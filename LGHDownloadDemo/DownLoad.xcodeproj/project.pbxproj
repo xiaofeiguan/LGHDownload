@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0293C6AF2BB9EFA958195A26 /* Pods_DownLoadTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90796FA8525916265F1AF14 /* Pods_DownLoadTests.framework */; };
+		3579EABAB76C9837B152183B /* Pods_DownLoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CBC4087962BC48C1CF7AAD /* Pods_DownLoad.framework */; };
 		3A72B8811FB980B300D39A72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A72B8801FB980B300D39A72 /* AppDelegate.m */; };
 		3A72B8871FB980B300D39A72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A72B8851FB980B300D39A72 /* Main.storyboard */; };
 		3A72B8891FB980B300D39A72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A72B8881FB980B300D39A72 /* Assets.xcassets */; };
@@ -18,8 +19,9 @@
 		5B9CBAA324976E6C00D721DC /* LGHListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CBAA224976E6C00D721DC /* LGHListViewController.m */; };
 		5B9CBAA824976FA100D721DC /* LGHSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CBAA724976FA100D721DC /* LGHSession.m */; };
 		5B9CBAAB2497712800D721DC /* LGHDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CBAAA2497712800D721DC /* LGHDownloadManager.m */; };
-		5B9CBAAD2498628D00D721DC /* LGHMakeViewTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CBAAC2498628D00D721DC /* LGHMakeViewTools.framework */; };
-		5B9CBAAE2498628D00D721DC /* LGHMakeViewTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CBAAC2498628D00D721DC /* LGHMakeViewTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B9CBAB2249894F000D721DC /* LGHDwonloadTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CBAB1249894F000D721DC /* LGHDwonloadTaskController.m */; };
+		5B9CBAB62498953E00D721DC /* VideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CBAB42498953E00D721DC /* VideoTableViewCell.m */; };
+		5B9CBAB72498953E00D721DC /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B9CBAB52498953E00D721DC /* VideoTableViewCell.xib */; };
 		E607DBCDFBDD3FF3AB8B1FDF /* Pods_DownLoad_DownLoadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2D1D507163BF78C37326F7 /* Pods_DownLoad_DownLoadUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,20 +41,6 @@
 			remoteInfo = DownLoad;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5B9CBAAF2498628D00D721DC /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5B9CBAAE2498628D00D721DC /* LGHMakeViewTools.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		15C48F3FA5E6D640C7919AAD /* Pods-DownLoadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownLoadTests.release.xcconfig"; path = "Target Support Files/Pods-DownLoadTests/Pods-DownLoadTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +66,11 @@
 		5B9CBAA92497712800D721DC /* LGHDownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGHDownloadManager.h; sourceTree = "<group>"; };
 		5B9CBAAA2497712800D721DC /* LGHDownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGHDownloadManager.m; sourceTree = "<group>"; };
 		5B9CBAAC2498628D00D721DC /* LGHMakeViewTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LGHMakeViewTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9CBAB0249894F000D721DC /* LGHDwonloadTaskController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGHDwonloadTaskController.h; sourceTree = "<group>"; };
+		5B9CBAB1249894F000D721DC /* LGHDwonloadTaskController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGHDwonloadTaskController.m; sourceTree = "<group>"; };
+		5B9CBAB32498953E00D721DC /* VideoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoTableViewCell.h; sourceTree = "<group>"; };
+		5B9CBAB42498953E00D721DC /* VideoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoTableViewCell.m; sourceTree = "<group>"; };
+		5B9CBAB52498953E00D721DC /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		7DEE0FA550B03FC530D80B33 /* Pods-DownLoad-DownLoadUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownLoad-DownLoadUITests.release.xcconfig"; path = "Target Support Files/Pods-DownLoad-DownLoadUITests/Pods-DownLoad-DownLoadUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8C2D1D507163BF78C37326F7 /* Pods_DownLoad_DownLoadUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DownLoad_DownLoadUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CBC4087962BC48C1CF7AAD /* Pods_DownLoad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DownLoad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B9CBAAD2498628D00D721DC /* LGHMakeViewTools.framework in Frameworks */,
+				3579EABAB76C9837B152183B /* Pods_DownLoad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +149,11 @@
 				3A72B8801FB980B300D39A72 /* AppDelegate.m */,
 				5B9CBAA124976E6C00D721DC /* LGHListViewController.h */,
 				5B9CBAA224976E6C00D721DC /* LGHListViewController.m */,
+				5B9CBAB0249894F000D721DC /* LGHDwonloadTaskController.h */,
+				5B9CBAB1249894F000D721DC /* LGHDwonloadTaskController.m */,
+				5B9CBAB32498953E00D721DC /* VideoTableViewCell.h */,
+				5B9CBAB42498953E00D721DC /* VideoTableViewCell.m */,
+				5B9CBAB52498953E00D721DC /* VideoTableViewCell.xib */,
 				3A72B8851FB980B300D39A72 /* Main.storyboard */,
 				3A72B8881FB980B300D39A72 /* Assets.xcassets */,
 				3A72B88A1FB980B300D39A72 /* LaunchScreen.storyboard */,
@@ -219,7 +217,6 @@
 				3A72B8791FB980B300D39A72 /* Frameworks */,
 				3A72B87A1FB980B300D39A72 /* Resources */,
 				D03F6BBD4426AB646FF69B07 /* [CP] Embed Pods Frameworks */,
-				5B9CBAAF2498628D00D721DC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,7 +277,7 @@
 				TargetAttributes = {
 					3A72B87B1FB980B300D39A72 = {
 						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					3A72B8931FB980B300D39A72 = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -320,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A72B88C1FB980B300D39A72 /* LaunchScreen.storyboard in Resources */,
+				5B9CBAB72498953E00D721DC /* VideoTableViewCell.xib in Resources */,
 				3A72B8891FB980B300D39A72 /* Assets.xcassets in Resources */,
 				3A72B8871FB980B300D39A72 /* Main.storyboard in Resources */,
 			);
@@ -349,11 +347,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DownLoad-DownLoadUITests/Pods-DownLoad-DownLoadUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/LGHMakeViewTools/LGHMakeViewTools.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGHMakeViewTools.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -389,11 +389,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DownLoad/Pods-DownLoad-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/LGHMakeViewTools/LGHMakeViewTools.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGHMakeViewTools.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -451,10 +453,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9CBAB62498953E00D721DC /* VideoTableViewCell.m in Sources */,
 				3A72B88F1FB980B300D39A72 /* main.m in Sources */,
 				5B9CBAA324976E6C00D721DC /* LGHListViewController.m in Sources */,
 				5B9CBAAB2497712800D721DC /* LGHDownloadManager.m in Sources */,
 				5B9CBAA824976FA100D721DC /* LGHSession.m in Sources */,
+				5B9CBAB2249894F000D721DC /* LGHDwonloadTaskController.m in Sources */,
 				3A72B8811FB980B300D39A72 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,12 +623,13 @@
 			baseConfigurationReference = D00667F23811F0792F7245EC /* Pods-DownLoad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 66M88PL895;
 				INFOPLIST_FILE = DownLoad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = share.DownLoad;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lgh.download;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -636,12 +641,13 @@
 			baseConfigurationReference = 1F62D8334F692DE30BD31A78 /* Pods-DownLoad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 66M88PL895;
 				INFOPLIST_FILE = DownLoad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = share.DownLoad;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lgh.download;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

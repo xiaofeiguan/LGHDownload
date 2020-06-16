@@ -80,8 +80,6 @@ static LGHDownloadManager * _instance = nil;
     dispatch_once(&onceToken, ^{
         _instance = [[super allocWithZone:NULL]init];
         _instance.maximumConnections = 10000;
-        //添加程序杀死的监听
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:UIApplicationWillTerminateNotification object:nil];
     });
     return _instance;
 }
