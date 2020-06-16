@@ -1,0 +1,16 @@
+PODS:
+  - LGHMakeViewTools (0.0.1)
+
+DEPENDENCIES:
+  - LGHMakeViewTools (~> 0.0.1)
+
+SPEC REPOS:
+  trunk:
+    - LGHMakeViewTools
+
+SPEC CHECKSUMS:
+  LGHMakeViewTools: 53b27d1ef8c2ace72af8eb9057310af5d32f9212
+
+PODFILE CHECKSUM: b89000aa6f7315146d21747041c84148461938ac
+
+COCOAPODS: 1.9.1
